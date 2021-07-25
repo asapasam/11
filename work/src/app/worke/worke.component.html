@@ -102,31 +102,33 @@
 
           </div>
           <div class="form-color">
-            <h2>Color</h2>
+            <h2 (click)=MyFN()>Color</h2>
             <!-- <input type="button" value="Color of text" class="btn-color" /> -->
             <!-- <input type="button" value="Background color" class="btn-bg-color"> -->
-            <div class="colors">
-              <input type="radio" name="choose" (click)="textColor = 'blue'">Blue
-              <input type="radio" name="choose" (click)="textColor = 'green'">Green
-              <input type="radio" name="choose" (click)="textColor = 'red'">Red
-              <input type="radio" name="choose" (click)="textColor = 'white'">White
-              <input type="radio" name="choose" (click)="textColor = 'black'">Black
-              <input type="radio" name="choose" (click)="textColor = 'orange'">orange
-              <input type="radio" name="choose" (click)="textColor = 'grey'">Grey
-              <input type="radio" name="choose" (click)="textColor = 'yellow'">yellow
-              <input type="radio" name="choose" (click)="textColor = 'violet'">Violet
+            <div class="colors" *ngIf="toggle21">
+              <div class="z1" (click)="textColor = 'blue'"></div>
+              <div class="z2" (click)="textColor = 'green'"></div>
+              <div class="z3" (click)="textColor = 'red'"></div>
+              <div class="z4" (click)="textColor = 'white'"></div>
+              <div class="z5" (click)="textColor = 'black'"></div>
+              <div class="x1" (click)="textColor = 'orange'"></div>
+              <div class="x2" (click)="textColor = 'grey'"></div>
+              <div class="x3" (click)="textColor = 'yellow'"></div>
+              <div class="x4" (click)="textColor = 'grey'"></div>
             </div>
           </div>
-          <h2>Background Color</h2>
-          <input type="radio" name="chose" (click)="Color = 'blue'">Blue
-          <input type="radio" name="chose" (click)="Color = 'green'">Green
-          <input type="radio" name="chose" (click)="Color = 'red'">Red
-          <input type="radio" name="chose" (click)="Color = 'white'">White
-          <input type="radio" name="chose" (click)="Color = 'black'">Black
-          <input type="radio" name="chose" (click)="Color = 'orange'">orange
-          <input type="radio" name="chose" (click)="Color = 'grey'">Grey
-          <input type="radio" name="chose" (click)="Color = 'yellow'">yellow
-          <input type="radio" name="chose" (click)="Color = 'violet'">Violet
+          <h2 (click)=MyFNC()>Background Color</h2>
+          <div class="BC" *ngIf="toggle20">
+            <div class="z" (click)="Color = 'blue'"></div>
+            <div class="zz" (click)="Color = 'green'"></div>
+            <div class="zzz" (click)="Color = 'red'"></div>
+            <div class="zzzz" (click)="Color = 'white'"></div>
+            <div class="zzzzz" (click)="Color = 'black'"></div>
+            <div class="x" (click)="Color = 'orange'"></div>
+            <div class="xx" (click)="Color = 'grey'"></div>
+            <div class="xxx" (click)="Color = 'yellow'"></div>
+            <div class="xxxx" (click)="Color = 'grey'"></div>
+          </div>
           <div class="form-style">
             <input type="radio" name="cho" (click)="textStyle = 'italic'">
             <span>cursive text</span>

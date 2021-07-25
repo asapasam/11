@@ -20,6 +20,8 @@ export class WorkeComponent implements OnInit {
   toggle3 = false;
   toggle4 = false;
   toggle5 = false;
+  toggle20 = false;
+  toggle21 = false;
   TR: any;
   TD: any;
   WTD: any;
@@ -126,6 +128,12 @@ myFun10(){
     this.toggle5 = !this.toggle5;
   }
 
+  MyFNC(){
+    this.toggle20 = !this.toggle20;
+  }
+  MyFN(){
+    this.toggle21 = !this.toggle21;
+  }
 
   funL() {
      const countLi = this.count
