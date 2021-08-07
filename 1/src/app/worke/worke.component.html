@@ -1,0 +1,195 @@
+<div class="b-popup" id="1" *ngIf='toggle0'><span class="close"></span>
+  <div class="b-popup-content">
+    write your passcode : 11
+    <input type="text" name="e" [(ngModel)]="e">
+    <button (click)="myFun10()"> Submit</button>
+  </div>
+</div>
+
+<div class="container" *ngIf="toggle10">
+  <div class="first show">
+    <div class="block top-block" #some>
+      <p class="text" [(ngModel)]='etext' #some [ngClass]="{
+          blue: textColor === 'blue',
+          green: textColor === 'green',
+          red: textColor === 'red',
+          white: textColor === 'white',
+          black: textColor === 'black',
+          orange: textColor === 'orange',
+          grey: textColor === 'grey',
+          yellow: textColor === 'yellow',
+          violet: textColor === 'violet',
+          q: textSize === '12px',
+          qq: textSize === '14px',
+          qqq: textSize === '16px',
+          qqqq: textSize === '18px',
+          qqqqq: textSize === '20px',
+          w: textStyle === 'italic',
+          ww: textWeight === 'bold',
+          e: fontFamily === 'cursive',
+          ee: fontFamily === 'fantasy',
+          eee: fontFamily === 'monospace',
+          eeee: fontFamily === 'sans-serif'
+        }" [innerHTML]='etext'>
+        <!-- {{ etext }} -->
+        <!-- {{ etext }}  -->
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, repellat.
+      </p>
+    </div>
+    <div class="center-block">
+      <input type="button" value="Edit" class="btn-style" (click)="myFun()" />
+      <input type="button" value="Style" class="btn-style" (click)="myFun1()" />
+      <input type="button" value="Block" class="btn-style" (click)="myFun2()" />
+    </div>
+
+
+
+    <div class="block bottom-block">
+      <div class="edit-block" *ngIf="toggle">
+        <input type="button" value="p" class="btn-style" (click)="myFun3()" />
+        <input type="button" value="h1" class="btn-style" (click)="myFun4()" />
+        <input type="button" value="h2" class="btn-style" (click)="myFun5()" />
+        <input type="button" value="h3" class="btn-style" (click)="myFun6()" />
+        <input type="button" value="h4" class="btn-style" (click)="myFun7()" />
+        <input type="button" value="h5" class="btn-style" (click)="myFun8()" />
+        <input type="button" value="h6" class="btn-style" (click)="myFun9()" />
+        <textarea class="edit-area" [(ngModel)]='text'>
+
+
+          <p>{{ text }}</p>
+                </textarea>
+        <input type="button" value="add" class="btn-add" (click)="fun()" />
+        <input type="button" value="save" class="btn-save" (click)="f()">
+      </div>
+      <div class="style-block" *ngIf="toggle1">
+        <form>
+          <div class="form-size">
+            <h2>font size</h2>
+            <input type="radio" name="chose" (click)="textSize = '12px'">12px
+            <input type="radio" name="chose" (click)="textSize = '14px'">14px
+            <input type="radio" name="chose" (click)="textSize = '16px'">16px
+            <input type="radio" name="chose" (click)="textSize = '18px'">18px
+            <input type="radio" name="chose" (click)="textSize = '20px'">20px
+          </div>
+          <div class="form-family">
+            <h2>Font family</h2>
+            <!-- <select id="fontFamily">
+              <option value="" selected>choose option</option>
+              <option value="cursive" (click)="fontFamily = 'cursive'">cursive</option>
+              <option value="fantasy" (click)="fontFamily = 'fantasy'">fantasy</option>
+              <option value="monospace" (click)="fontFamily = 'monospace'">monospace</option>
+              <option value="sans-serif" (click)="fontFamily = 'sans-serif'">sans-serif</option>
+            </select> -->
+            <select [(ngModel)]="selectValue" name="fi" (ngModelChange)="onChange($event)">
+              <option *ngFor="let o of lang" [value]='o.name'>
+                {{o.name}}
+              </option>
+            </select>
+
+            <!-- <input type="radio" name="chos" (click)="fontFamily = 'cursive'">cursive
+            <input type="radio" name="chos" (click)="fontFamily = 'fantasy'">fantasy
+            <input type="radio" name="chos" (click)="fontFamily = 'monospace'">monospace
+            <input type="radio" name="chos" (click)="fontFamily = 'sans-serif'">sans-serif -->
+
+          </div>
+          <div class="form-color">
+            <h2 (click)=MyFN()>Color</h2>
+            <!-- <input type="button" value="Color of text" class="btn-color" /> -->
+            <!-- <input type="button" value="Background color" class="btn-bg-color"> -->
+            <div class="colors" *ngIf="toggle21" (click)="MyFNCTION($event)" #colo>
+              <div class="color" style='background-color: aquamarine;color: aquamarine;'></div>
+              <div class="color" style='background-color: saddlebrown;color: saddlebrown;'></div>
+              <div class="color" style='background-color: firebrick;color: firebrick;'></div>
+              <div class="color" style='background-color: black;color: black;'></div>
+              <div class="color" style='background-color: red;color: red;'></div>
+              <div class="color" style='background-color: azure;color: azure;'></div>
+              <div class="color" style='background-color: yellow;color: yellow;'></div>
+              <div class="color" style='background-color: blue;color: blue;'></div>
+              <div class="color" style='background-color: plum;color: plum;'></div>
+            </div>
+          </div>
+          <h2 (click)=MyFNC()>Background Color</h2>
+
+          <div class="BC" *ngIf="toggle20" (click)="MyFNCT($event)" #colors>
+            <div class="color" style='background-color: aquamarine;float: left;'></div>
+            <div class="color" style='background-color: saddlebrown;float: left;'></div>
+            <div class="color" style='background-color: firebrick;float: left;'></div>
+            <div class="color" style='background-color: black;float: left;'></div>
+            <div class="color" style='background-color: red;float: left;'></div>
+            <div class="color" style='background-color: azure;float: left;'></div>
+            <div class="color" style='background-color: yellow;float: left;'></div>
+            <div class="color" style='background-color: blue;float: left;'></div>
+            <div class="color" style='background-color: plum;float: left;'></div>
+          </div>
+
+          <div class="form-style">
+            <input type="radio" name="cho" (click)="textStyle = 'italic'">
+            <span>cursive text</span>
+
+            <input type="radio" name="choo" (click)="textWeight = 'bold'"><span>bold</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="second" *ngIf="toggle5">
+    <div class="block">
+      <h2>Choose what you want</h2>
+      <form>
+        <input type="radio" name="choose" (click)="F()" class="qwe" /><span>table</span>
+        <input type="radio" name="choose" (click)="myF()" class="qw" /><span>list</span>
+      </form>
+      <div class="create-list" *ngIf="toggle3">
+
+        <input type="text" name="count" id="count" [(ngModel)]="count" />
+        <!-- <select name="type">
+            <option value="circle">circle</option>
+            <option value="disc">disc</option>
+            <option value="square">square</option>
+          </select> -->
+        <select [(ngModel)]="text" name="fi">
+          <option *ngFor="let o of language">
+            {{o.name}}
+          </option>
+        </select>
+        <input type="button" value="create-list" name="create" class="btn-create-list" (click)="funL()" />
+
+      </div>
+      <div class="create-table" *ngIf="toggle4">
+        <form name="form-table">
+          Count TR: <input type="text" name="TR" [(ngModel)]="TR" />
+          <hr />
+          Count TD: <input type="text" name="TD" [(ngModel)]="TD" />
+          <hr />
+          <h2>Add style to your table:</h2>
+          <hr />
+          Width of TD: <input type="text" name="WTD" [(ngModel)]="WTD" />
+          <hr />
+          Height of TD: <input type="text" name="HTD" [(ngModel)]="HTD" />
+          <hr />
+          Width of border: <input type="text" name="WB" [(ngModel)]="WB" /> Type
+          of border:
+          <select id="typeBorder">
+            <option value="solid" selected>solid</option>
+          </select>
+          Color of border:
+          <!-- <select name="CB" [(ngModel)]="selectedValue">
+            <option  value="red">red</option>
+            <option  value="black">black</option>
+            <option  value="blue">blue</option>
+            <option  value="green">green</option>
+          </select> -->
+
+          <select [(ngModel)]="selectedOption" name="first">
+            <option *ngFor="let o of languages">
+              {{o.name}}
+            </option>
+          </select>
+
+          <hr />
+          <input type="button" value="create-table" name="create" class="btn-create-table" (click)="funT()" />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
